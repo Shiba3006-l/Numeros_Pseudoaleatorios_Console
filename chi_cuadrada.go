@@ -55,6 +55,7 @@ func chicuadrada(r []float64) {
 		fmt.Printf("%-10d %.4f - %.4f     %-10d %-10.2f %-12.4f\n", i+1, ini, fin, o, esp, c)
 	}
 
+	// Grados de libertad
 	v := k - 1
 	fmt.Printf("\nChi-cuadrada calculada = %.4f\n", chi)
 	fmt.Printf("Grados de libertad (k-1) = %d\n", v)
@@ -65,6 +66,7 @@ func chicuadrada(r []float64) {
 	var op int
 	fmt.Scan(&op)
 
+	// Determinamos el valor crítico aproximado usando la aproximación de Wilson-Hilferty
 	var z, alfa float64
 	switch op {
 	case 1:

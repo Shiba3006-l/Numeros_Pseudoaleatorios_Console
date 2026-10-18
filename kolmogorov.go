@@ -18,6 +18,7 @@ func kolmogorov(r []float64) {
 	copy(ord, r)
 	sort.Float64s(ord)
 
+	// Mostramos la secuencia ordenada
 	fn := float64(n)
 	dMas, dMenos := 0.0, 0.0
 	mostrarTabla := n <= 50
@@ -41,12 +42,14 @@ func kolmogorov(r []float64) {
 		}
 	}
 
+	// Calculamos D = max(D+, D-)
 	d := math.Max(dMas, dMenos)
 	fmt.Printf("\nn = %d\n", n)
 	fmt.Printf("D+ = %.4f\n", dMas)
 	fmt.Printf("D- = %.4f\n", dMenos)
 	fmt.Printf("D  = máx(D+, D-) = %.4f\n", d)
 
+	// Determinamos el valor crítico
 	var crit float64
 	if n > 35 {
 		fmt.Println("Nivel de significancia: 1) 0.10   2) 0.05   3) 0.01")
