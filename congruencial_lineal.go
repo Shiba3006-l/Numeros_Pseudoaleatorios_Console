@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func lineal() {
+func lineal() []float64 {
 	var x, a, c, m, n int // Declaramos las variables necesarias
 
 	fmt.Print("Ingrese el valor de x0: ")
@@ -55,6 +55,8 @@ func lineal() {
 	vistos[x] = 0               // Guardamos la posición del primer valor generado
 	fmt.Printf("x0 = %d\n", x)
 
+	var sec []float64 // Secuencia normalizada (ri = xi / m)
+
 	// Generamos los números pseudoaleatorios y verificamos si se repiten
 	for i := 1; i <= n; i++ {
 		x = (a*x + c) % m
@@ -67,5 +69,7 @@ func lineal() {
 			break
 		}
 		vistos[x] = i // Guardamos la posición del número generado
+		sec = append(sec, float64(x)/float64(m))
 	}
+	return sec
 }

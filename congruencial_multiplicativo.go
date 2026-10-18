@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func multiplicativo() {
+func multiplicativo() []float64 {
 	var x, a, m, n int // Declaramos las variables necesarias
 	var c int = 0
 
@@ -48,6 +48,8 @@ func multiplicativo() {
 	vistos[x] = 0               // Guardamos la posición del primer valor generado
 	fmt.Printf("x0 = %d\n", x)
 
+	var sec []float64 // Secuencia normalizada (ri = xi / m)
+
 	// Generamos los números pseudoaleatorios y verificamos si se repiten
 	for i := 1; i <= n; i++ {
 		x = (a*x + c) % m
@@ -60,5 +62,7 @@ func multiplicativo() {
 			break
 		}
 		vistos[x] = i // Guardamos la posición del número generado
+		sec = append(sec, float64(x)/float64(m))
 	}
+	return sec
 }
