@@ -43,7 +43,8 @@ func main() {
 		fmt.Println("2. Congruencial multiplicativo")
 		fmt.Println("3. Congruencial aditivo")
 		fmt.Println("4. Prueba de uniformidad")
-		fmt.Println("5. Salir")
+		fmt.Println("5. Pruebas de Medias")
+		fmt.Println("6. Salir")
 
 		var opcion int
 		fmt.Scan(&opcion)
@@ -58,10 +59,12 @@ func main() {
 		case 4:
 			uniformidad(ultima)
 		case 5:
+			medias()
+		case 6:
 			fmt.Println("Hasta luego.")
 			return
 		default:
-			fmt.Println("Opción inválida. Elija un número del 1 al 5.")
+			fmt.Println("Opción inválida. Elija un número del 1 al 6.")
 		}
 	}
 }
